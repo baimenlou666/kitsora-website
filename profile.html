@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Profile - Kitsora</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      overflow-x: hidden;
+      color: #fff;
+      font-family: "Courier New", Consolas, monospace;
+      background: #05040b url("./assets/profile-bg.png") center center / cover no-repeat fixed;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    body::before {
+      z-index: 1;
+      background:
+        linear-gradient(rgba(255, 255, 255, .035) 50%, rgba(0, 0, 0, .18) 50%),
+        radial-gradient(circle at 48% 52%, rgba(130, 82, 255, .2), transparent 34%),
+        linear-gradient(90deg, rgba(255, 0, 120, .08), rgba(0, 255, 255, .05), rgba(120, 70, 255, .08));
+      background-size: 100% 4px, 100% 100%, 100% 100%;
+      mix-blend-mode: screen;
+      opacity: .68;
+    }
+
+    body::after {
+      z-index: 2;
+      background:
+        radial-gradient(circle at 50% 50%, transparent 0 42%, rgba(0, 0, 0, .28) 76%, rgba(0, 0, 0, .72) 100%);
+    }
+
+    .profile-shell {
+      position: relative;
+      z-index: 3;
+      min-height: 100vh;
+      padding: clamp(18px, 3vw, 42px);
+    }
+
+    .profile-card {
+      position: absolute;
+      left: 48.2%;
+      top: 27vh;
+      width: min(31vw, 560px);
+      min-height: 61.5vh;
+      padding: clamp(18px, 2vw, 32px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transform: translateX(-50%);
+      animation: profile-flicker 4.8s steps(2, end) infinite;
+    }
+
+    .profile-card::before {
+      content: none;
+    }
+
+    h1 {
+      margin: 0 0 clamp(18px, 2.6vh, 28px);
+      color: #ffffff;
+      font-size: clamp(1.48rem, 2.3vw, 2.4rem);
+      line-height: 1.1;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      text-shadow:
+        1px 0 0 rgba(255, 0, 180, .78),
+        -1px 0 0 rgba(0, 240, 255, .62),
+        0 0 5px rgba(255, 255, 255, .96),
+        0 0 14px rgba(168, 106, 255, .82);
+    }
+
+    .profile-grid {
+      display: grid;
+      gap: clamp(11px, 1.55vh, 19px);
+    }
+
+    .field {
+      display: grid;
+      gap: 4px;
+      justify-items: center;
+    }
+
+    .label {
+      color: #eee3ff;
+      font-size: clamp(.85rem, 1.06vw, 1.06rem);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 4px rgba(255, 255, 255, .72),
+        0 0 10px rgba(164, 104, 255, .72),
+        0 0 14px rgba(93, 207, 255, .24);
+    }
+
+    .value {
+      color: #fff;
+      font-size: clamp(1.04rem, 1.24vw, 1.28rem);
+      line-height: 1.45;
+      text-shadow:
+        0 0 4px rgba(255, 255, 255, .96),
+        0 0 12px rgba(164, 104, 255, .72),
+        .75px 0 0 rgba(255, 0, 180, .32),
+        -.75px 0 0 rgba(0, 240, 255, .32);
+    }
+
+    .home-link {
+      position: fixed;
+      z-index: 10;
+      left: clamp(18px, 3vw, 42px);
+      bottom: clamp(18px, 3vw, 42px);
+      padding: 12px 16px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(216, 194, 255, .64);
+      background: rgba(10, 8, 24, .58);
+      box-shadow:
+        0 0 12px rgba(255, 255, 255, .26),
+        0 0 22px rgba(164, 104, 255, .46);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .home-link:hover,
+    .home-link:focus-visible {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow:
+        0 0 16px rgba(255, 255, 255, .66),
+        0 0 34px rgba(164, 104, 255, .86),
+        0 0 46px rgba(0, 240, 255, .32);
+    }
+
+    @keyframes profile-flicker {
+      0%, 88%, 100% {
+        filter: none;
+      }
+
+      89% {
+        filter: hue-rotate(8deg) contrast(1.08);
+      }
+
+      90% {
+        filter: hue-rotate(-10deg) contrast(1.15);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .profile-shell {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 96px;
+      }
+
+      .profile-card {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: min(88vw, 560px);
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="profile-shell">
+    <section class="profile-card" aria-label="Character profile">
+      <h1>Character Profile</h1>
+
+      <div class="profile-grid">
+        <div class="field">
+          <span class="label">Name:</span>
+          <span class="value">Kitsora</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Type:</span>
+          <span class="value">Digital Lifeform</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Class:</span>
+          <span class="value">AI Explorer</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Origin:</span>
+          <span class="value">Human Imagination</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Abilities:</span>
+          <span class="value">Learning<br>Exploring<br>Creating</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Current Quest:</span>
+          <span class="value">Discovering Meaning</span>
+        </div>
+      </div>
+    </section>
+
+    <a class="home-link" href="./index.html">Return Home</a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reference Page - Kitsora</title>
+  <link rel="icon" type="image/png" href="./assets/remote/images/favicon.png">
+  <link rel="stylesheet" href="./css/main.css">
+  <style>
+    .ref-wrap {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4.5rem) 0;
+    }
+
+    .ref-hero {
+      margin-bottom: clamp(2rem, 4vw, 3.5rem);
+      text-align: center;
+    }
+
+    .ref-hero h1 {
+      margin: 0 0 1.2rem;
+      color: #f7fbff;
+      font-size: clamp(3rem, 8vw, 6.2rem);
+      line-height: 1;
+      text-shadow:
+        0 0 8px rgba(255, 255, 255, .92),
+        0 0 22px rgba(167, 139, 250, .9),
+        0 0 46px rgba(96, 165, 250, .54);
+    }
+
+    .ref-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .85rem;
+      margin-top: 1.4rem;
+    }
+
+    .ref-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 170px;
+      padding: .75rem 1rem;
+      color: #f7efff;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: underline;
+      border: 1px solid rgba(199, 166, 255, .72);
+      border-radius: 6px;
+      background: rgba(10, 8, 28, .46);
+      box-shadow:
+        0 0 12px rgba(255, 255, 255, .18),
+        0 0 22px rgba(145, 104, 255, .38);
+      text-shadow:
+        0 0 5px rgba(255, 255, 255, .82),
+        0 0 14px rgba(174, 116, 255, .72);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .ref-link:hover,
+    .ref-link:focus-visible {
+      transform: translateY(-2px) scale(1.04);
+      border-color: rgba(234, 216, 255, .96);
+      box-shadow:
+        0 0 14px rgba(255, 255, 255, .58),
+        0 0 30px rgba(145, 104, 255, .82);
+    }
+
+    .ref-section {
+      margin: clamp(2rem, 4vw, 3rem) 0;
+    }
+
+    .ref-section h2 {
+      margin: 0 0 1.3rem;
+      color: #ffffff;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.12;
+      text-align: center;
+      text-shadow:
+        0 0 6px rgba(255, 255, 255, .94),
+        0 0 16px rgba(216, 180, 254, .76),
+        0 0 30px rgba(96, 165, 250, .38);
+    }
+
+    .ref-gallery {
+      display: grid;
+      gap: clamp(1.4rem, 3vw, 2.4rem);
+    }
+
+    .ref-image-frame {
+      display: block;
+      padding: clamp(.55rem, 1.5vw, .9rem);
+      border: 1px solid rgba(196, 181, 253, .26);
+      border-radius: 8px;
+      background: rgba(12, 9, 34, .48);
+      box-shadow:
+        inset 0 0 18px rgba(142, 99, 255, .08),
+        0 0 18px rgba(88, 166, 255, .12),
+        0 0 30px rgba(145, 104, 255, .12);
+    }
+
+    .ref-image {
+      display: block;
+      width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow:
+        0 0 10px rgba(255, 255, 255, .2),
+        0 0 26px rgba(96, 165, 250, .18);
+    }
+
+    .model-sheet {
+      max-width: min(820px, 100%);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 720px) {
+      .ref-link {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars" aria-hidden="true">
+    <span class="star-layer star-layer-1"></span>
+    <span class="star-layer star-layer-2"></span>
+    <span class="star-layer star-layer-3"></span>
+  </div>
+
+  <div class="snowfall" aria-hidden="true">
+    <span class="snow-layer snow-layer-small"></span>
+    <span class="snow-layer snow-layer-medium"></span>
+    <span class="snow-layer snow-layer-large"></span>
+    <span class="interactive-snow" id="interactive-snow"></span>
+  </div>
+
+  <main class="ref-wrap">
+    <header class="ref-hero">
+      <h1>Reference Page</h1>
+      <nav class="ref-nav" aria-label="Reference navigation">
+        <a href="./prototype.html" class="ref-link">Back to Prototype Memory</a>
+        <a href="./index.html" class="ref-link">Back to Main</a>
+      </nav>
+    </header>
+
+    <section class="ref-section">
+      <a href="./assets/ref/skrobo_ref.png" class="ref-image-frame model-sheet">
+        <img
+          src="./assets/ref/skrobo_ref.png"
+          alt="Old Kitsora robot model sheet from 2021"
+          class="ref-image">
+      </a>
+    </section>
+
+    <section class="ref-section" aria-labelledby="vrchat-screenshots">
+      <h2 id="vrchat-screenshots">Screenshots from VRChat</h2>
+      <div class="ref-gallery">
+        <a href="./assets/ref/2021-06-10_22-55-02.247.jpg" class="ref-image-frame">
+          <img
+            src="./assets/ref/2021-06-10_22-55-02.247.jpg"
+            alt="Kitsora VRChat screenshot from 2021-06-10"
+            class="ref-image">
+        </a>
+
+        <a href="./assets/ref/2021-10-07_22-42-07.634.jpg" class="ref-image-frame">
+          <img
+            src="./assets/ref/2021-10-07_22-42-07.634.jpg"
+            alt="Kitsora VRChat screenshot from 2021-10-07"
+            class="ref-image">
+        </a>
+
+        <a href="./assets/ref/2022-05-09_23-22-48.230.jpg" class="ref-image-frame">
+          <img
+            src="./assets/ref/2022-05-09_23-22-48.230.jpg"
+            alt="Kitsora VRChat screenshot from 2022-05-09"
+            class="ref-image">
+        </a>
+
+        <a href="./assets/ref/2023-01-19_22-26-43.069.jpg" class="ref-image-frame">
+          <img
+            src="./assets/ref/2023-01-19_22-26-43.069.jpg"
+            alt="Kitsora VRChat screenshot from 2023-01-19"
+            class="ref-image">
+        </a>
+
+        <a href="./assets/ref/2023-10-13_22-04-56.910.jpg" class="ref-image-frame">
+          <img
+            src="./assets/ref/2023-10-13_22-04-56.910.jpg"
+            alt="Kitsora VRChat screenshot from 2023-10-13"
+            class="ref-image">
+        </a>
+
+        <a href="./assets/ref/2024-08-31_23-24-07.261.jpg" class="ref-image-frame">
+          <img
+            src="./assets/ref/2024-08-31_23-24-07.261.jpg"
+            alt="Kitsora VRChat screenshot from 2024-08-31"
+            class="ref-image">
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

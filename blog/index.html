@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Blog - Kitsora</title>
+  <link rel="icon" type="image/png" href="../assets/remote/images/favicon.png">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .blog-tools {
+      text-align: center;
+    }
+
+    .blog-tools img {
+      width: 32px;
+      height: 32px;
+      vertical-align: middle;
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, .4));
+    }
+
+    .tag-row {
+      margin-top: 1rem;
+      line-height: 1.9;
+    }
+
+    .posttag {
+      display: inline-block;
+      padding: .08rem .32rem;
+      border-radius: 4px;
+      color: #fff;
+      background: rgba(255, 255, 255, .12);
+      box-shadow: 0 0 8px rgba(196, 181, 253, .18);
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .tag-link {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .tag-link:hover .posttag,
+    .tag-link:focus-visible .posttag {
+      filter: brightness(1.25);
+      transform: translateY(-1px);
+      box-shadow: 0 0 12px rgba(255, 255, 255, .34);
+    }
+
+    .posttag.game {
+      background: rgba(65, 145, 255, .35);
+    }
+
+    .posttag.music {
+      background: rgba(204, 68, 255, .35);
+    }
+
+    .posttag.video {
+      background: rgba(255, 140, 62, .35);
+    }
+
+    .posttag.other {
+      background: rgba(140, 140, 160, .36);
+    }
+
+    .year-panel ul {
+      margin-bottom: 0;
+    }
+
+    .year-panel li {
+      margin: .38rem 0;
+    }
+
+    .new-flasher {
+      margin-left: .4rem;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars" aria-hidden="true">
+    <span class="star-layer star-layer-1"></span>
+    <span class="star-layer star-layer-2"></span>
+    <span class="star-layer star-layer-3"></span>
+  </div>
+
+  <div class="snowfall" aria-hidden="true">
+    <span class="snow-layer snow-layer-small"></span>
+    <span class="snow-layer snow-layer-medium"></span>
+    <span class="snow-layer snow-layer-large"></span>
+    <span class="interactive-snow" id="interactive-snow"></span>
+  </div>
+
+  <main class="site-wrap">
+    <header class="hero">
+      <div class="hero-text">
+        <h1>Review Blog</h1>
+        <h3>
+          <a href="../index.html">Return to the homepage</a>
+        </h3>
+        <p class="intro">
+          Reviews, rankings, demo notes, music lists, game thoughts, and other posts
+          gathered from newest to oldest.
+        </p>
+      </div>
+
+      <img
+        class="site-mascot"
+        src="../assets/remote/images/skrobo_bg.png"
+        alt="Kitsora robot mascot">
+    </header>
+
+    <section class="panel">
+      <h2>It's A Place All Right.</h2>
+      <p>
+        This review blog collects text reviews and ranking posts, mostly about games,
+        music, videos, demos, and whatever else feels review-shaped at the time. The local
+        version keeps the original index structure while matching the current starry site
+        style.
+      </p>
+      <p>
+        Older mirrored posts also lived on
+        <a href="https://kitsora.blogspot.com/">Blogger</a>.
+      </p>
+      <p>
+        Posts are ordered newest first and grouped by year. Tags mark broad categories for
+        browsing, while older links are preserved as direct article links.
+      </p>
+
+      <div class="blog-tools">
+        <p>
+          <a href="rss.xml">
+            <img src="../assets/remote/images/icon_rss.png" alt="RSS feed">
+            <br>
+            RSS feed for this review blog
+          </a>
+        </p>
+        <p><a href="songindex.html">Reviewed Song Index</a></p>
+        <p><a href="gamelist.html">Game of the Year Index</a></p>
+
+        <div class="tag-row">
+          Common tags:
+          <br>
+          <a id="tag-games" class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a>
+          <a id="tag-demos" class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a>
+          <a id="tag-pokemon" class="tag-link" href="#tag-pokemon"><span class="posttag">[Pokemon]</span></a>
+          <a id="tag-starfield" class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a>
+          <br>
+          <a id="tag-music" class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a>
+          <a id="tag-album" class="tag-link" href="#tag-album"><span class="posttag">[Album]</span></a>
+          <a id="tag-spotify" class="tag-link" href="#tag-spotify"><span class="posttag">[Spotify]</span></a>
+          <a id="tag-year-end" class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a>
+          <br>
+          <a id="tag-video" class="tag-link" href="#tag-video"><span class="posttag video">[Video]</span></a>
+          <a id="tag-ads" class="tag-link" href="#tag-ads"><span class="posttag">[Ads]</span></a>
+          <a id="tag-movie" class="tag-link" href="#tag-movie"><span class="posttag">[Movie]</span></a>
+          <a id="tag-tv" class="tag-link" href="#tag-tv"><span class="posttag">[TV]</span></a>
+          <br>
+          <a id="tag-other" class="tag-link" href="#tag-other"><span class="posttag other">[Other]</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel year-panel">
+      <h2>2026</h2>
+      <ul>
+        <li>June 27 - <a href="20260627.html">Steam Next Fest June 2026 Demos</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a><img class="new-flasher" src="../assets/remote/images/gcgifs/new_flasher.gif" alt="New"></li>
+        <li>Mar 7 - <a href="20260307.html">Steam Next Fest February 2026 Demos</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Jan 31 - <a href="20260131.html">Billboard 2025 Year-End Music List Review Thing That I Keep Doing To Myself</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Jan 14 - <a href="20260114.html">Games I Beat in 2025, Ranked</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+      </ul>
+    </section>
+
+    <section class="panel year-panel">
+      <h2>2025</h2>
+      <ul>
+        <li>Oct 26 - <a href="20251026.html">Steam Next Fest October 2025 Demos</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>June 22 - <a href="20250622.html">Steam Next Fest June 2025 Demos</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Mar 6 - <a href="20250306.html">Steam Next Fest February 2025 Demos</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Feb 25 - <a href="20250225.html">State of the Steam Demos Through 2024</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Feb 18 - <a href="20250218.html">Games I Beat In 2018, Finally Ranked But Based On Distant Memories</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Jan 31 - <a href="20250131.html">Finally, My 2024 Billboard Year-End List Review Of Whatever Music Apparently Was</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+      </ul>
+    </section>
+
+    <section class="panel year-panel">
+      <h2>2024</h2>
+      <ul>
+        <li>Dec 31 - <a href="20241231.html">Games I Beat in 2024, Ranked</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Dec 28 - <a href="20241228.html">Billboard Year-End List 2014 Re-Review</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 5 - <a href="20241205.html">PC Gamer's Top 25 Most Wanted Games for 2024, Which I've Already Ranked</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Nov 25 - <a href="20241125.html">PC Gamer's 100-Or-So Most Wanted Nominees for 2024, But I've Ranked Them</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Sep 27 - <a href="20240927.html">Starfield Play Journal #24 - I reject your universe and substitute another at random.</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 20 - <a href="20240920.html">Starfield Play Journal #23 - The Last Mystery</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 16 - <a href="20240916.html">Starfield Play Journal #22 - This reminds me of that one game people like.</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 14 - <a href="20240914.html">Starfield Play Journal #21 - The Part Where Things Really Happen</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 12 - <a href="20240912.html">Starfield Play Journal #20 - Video Game Shotguns</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 5 - <a href="20240905-2.html">Starfield Play Journal #19 - Do what you want 'cause a pirate gets paid.</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 5 - <a href="20240905-1.html">Starfield Play Journal #18 - Suit Up and Bug Out</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Aug 23 - <a href="20240823.html">Starfield Play Journal #17 - What else is there to do?</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Aug 22 - <a href="20240822.html">Starfield Play Journal #16 - More like... CARfield.</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>June 24 - <a href="20240624.html">Steam Next Fest June 2024 Demos</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>June 11 - <a href="20240611.html">Starfield Play Journal #15 - Would you marry a robot? (I would.)</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Feb 13 - <a href="20240213.html">Steam Next Fest February 2024 Demos</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Jan 16 - <a href="20240116.html">Games I Beat in 2023, Ranked</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Jan 12 - <a href="20240112.html">The Return of the Revenge of the Year-End Billboard: 2023 Edition</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+      </ul>
+    </section>
+
+    <section class="panel year-panel">
+      <h2>2023</h2>
+      <ul>
+        <li>Oct 24 - <a href="20231024.html">Starfield Play Journal #14 - Citizenship Achieved</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Oct 22 - <a href="20231022.html">Starfield Play Journal #13 - I'm doing my part, matey!</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Oct 12 - <a href="20231012.html">Starfield Play Journal #12 - The Corporate Dream</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Oct 2 - <a href="20231002.html">Starfield Play Journal #11 - Let's Not Be Cops</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 30 - <a href="20230930.html">Starfield Play Journal #10 - Lassoing up a Stargle</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 21 - <a href="20230921.html">Starfield Play Journal #9 - One popcorn cube with real butter for the midnight showing.</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 20 - <a href="20230920.html">Starfield Play Journal #8 - Your Skyrim is showing.</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 17 - <a href="20230917.html">Starfield Play Journal #7 - Bethesda Games in SPACE!</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 13 - <a href="20230913.html">Starfield Play Journal #6 - Just Like the Space-Olden Space-Days</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 12 - <a href="20230912-2.html">Starfield Play Journal #5 - Robo-Ghost</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 12 - <a href="20230912-1.html">Starfield Play Journal #4 - Cowboy Up</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 8 - <a href="20230908.html">Starfield Play Journal #3 - To the Moon!</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 7 - <a href="20230907.html">Starfield Play Journal #2 - First Photos</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>Sep 6 - <a href="20230906.html">Starfield Play Journal #1 - Tiny Launch Night</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-starfield"><span class="posttag">[Starfield]</span></a></li>
+        <li>June 27 - <a href="20230627.html">Steam Next Fest June 2023 Demos</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>May 9 - <a href="20230509.html">LuNaCoDe23, or LudoNarraCon Demos of 2023</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Jan 31 - <a href="20230131.html">Games I Beat in 2022, Finally Ranked</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+      </ul>
+    </section>
+
+    <section class="panel year-panel">
+      <h2>2022</h2>
+      <ul>
+        <li>Dec 31 - <a href="20221231.html">2022 Year-End Song Chart List Type Thing I Guess</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Oct 12 - <a href="20221012.html">Steam Next Fest October 2022 Demos</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>July 10 - <a href="20220710.html">Steam Next Fest June 2022 Demos</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Mar 9 - <a href="20220309.html">Masters Of The Universe Guest Starring He-Man The Netflix Reboot Sequel Part 2</a> <a class="tag-link" href="#tag-video"><span class="posttag video">[Video]</span></a> <a class="tag-link" href="#tag-tv"><span class="posttag">[TV]</span></a></li>
+        <li>Feb 28 - <a href="20220228.html">Steam Next Fest February 2022 Demos</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+      </ul>
+    </section>
+
+    <section class="panel year-panel">
+      <h2>2021</h2>
+      <ul>
+        <li>Dec 31 - <a href="20211231-2.html">Games I Beat in 2021, But Ranked</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Dec 31 - <a href="20211231-1.html">2021 Year-End Song Thing Somehow</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 23 - <a href="20211223.html">Winter 2021 Xbox Demo Things</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Oct 19 - <a href="20211019.html">P25TARATS (Pokemon 25: The Album Review, And Then Some)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-album"><span class="posttag">[Album]</span></a></li>
+        <li>Sep 21 - <a href="20210921.html">Pokemon Design Ranking, Generation 2</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-pokemon"><span class="posttag">[Pokemon]</span></a></li>
+        <li>July 26 - <a href="20210726.html">He-Man But Not Entirely The Netflix Reboot Sequel Thingy Part 1 Of However Many</a> <a class="tag-link" href="#tag-video"><span class="posttag video">[Video]</span></a> <a class="tag-link" href="#tag-tv"><span class="posttag">[TV]</span></a></li>
+        <li>June 23 - <a href="20210623.html">Post-E3 June 2021 Demo Reviews</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Feb 9 - <a href="20210209.html">Steam Game Festival February 2021 Demo Reviews</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Jan 26 - <a href="20210126.html">Pokemon Design Ranking, Generation 3</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-pokemon"><span class="posttag">[Pokemon]</span></a></li>
+      </ul>
+    </section>
+
+    <section class="panel year-panel">
+      <h2>2020</h2>
+      <ul>
+        <li>Dec 31 - <a href="20201231-2.html">Games I Beat in 2020, But Ranked</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Dec 31 - <a href="20201231-1.html">2020 Year and/or World End Log of Popular Songs</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 6 - <a href="20201206.html">Spotify's 2020 Wrapped in a Nice Little Bow of Algorithms</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-spotify"><span class="posttag">[Spotify]</span></a></li>
+        <li>Oct 17 - <a href="20201017.html">Pokemon Design Ranking, Generation 4</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-pokemon"><span class="posttag">[Pokemon]</span></a></li>
+        <li>Oct 11 - <a href="20201011.html">Steam Game Festival Autumn 2020 Demo Reviews</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Oct 4 - <a href="20201004.html">PS4 Icons, Judged as Switch Icons</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Sep 14 - <a href="20200914.html">New review blog location! Yes, it's moved again.</a> <a class="tag-link" href="#tag-other"><span class="posttag other">[Other]</span></a></li>
+        <li>Aug 21 - <a href="20200821.html">Pokemon Design Ranking, Generation 5</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-pokemon"><span class="posttag">[Pokemon]</span></a></li>
+        <li>June 21 - <a href="20200621.html">Steam Game Festival Summer 2020 Demo Reviews</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Apr 29 - <a href="20200429.html">Ludological Narrative Convention 2020 Demo Reviews</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Mar 21 - <a href="20200321.html">Steam Game Festival Spring 2020 Demo Reviews</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Mar 9 - <a href="20200309.html">Pokemon Design Ranking, Generation 6</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-pokemon"><span class="posttag">[Pokemon]</span></a></li>
+        <li>Feb 21 - <a href="20200221.html">Pokemon Design Ranking, Generation 7</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-pokemon"><span class="posttag">[Pokemon]</span></a></li>
+        <li>Feb 7 - <a href="20200207.html">Pokemon Design Ranking, Generation 8 (Initial)</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-pokemon"><span class="posttag">[Pokemon]</span></a></li>
+      </ul>
+    </section>
+
+    <section class="panel year-panel">
+      <h2>2019</h2>
+      <ul>
+        <li>Dec 29 - <a href="20191229.html">2019 "Pop Is Dead Again" Year End List Extraordinaire</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 24 - <a href="20191224-2.html">Games I Beat In 2019, But Ranked</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Dec 24 - <a href="20191224-1.html">Star Wars Episode 9 Talk Thing (Totally Spoilers)</a> <a class="tag-link" href="#tag-video"><span class="posttag video">[Video]</span></a> <a class="tag-link" href="#tag-movie"><span class="posttag">[Movie]</span></a></li>
+        <li>Dec 14 - <a href="20191214.html">Game Award Festival 2019 Demo Reviews</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Jan 28 - <a href="20190128.html">Weezer Sings THE HITS!</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-album"><span class="posttag">[Album]</span></a></li>
+      </ul>
+    </section>
+
+    <section class="panel year-panel">
+      <h2>2018</h2>
+      <ul>
+        <li>Dec 6 - <a href="20181206.html">2018 Year End List Of Crap I Wrote About Garbage But Not The Band From The 90s</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>June 27 - <a href="20180627.html">More Pokemon Free-To-Play Game Reviews</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-pokemon"><span class="posttag">[Pokemon]</span></a></li>
+        <li>June 9 - <a href="20180609.html">50 Shades For Free! Click Now For Samsung iPhone X 2</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-album"><span class="posttag">[Album]</span></a></li>
+        <li>Mar 18 - <a href="20180318.html">47 WiiWare Demos Reviewed</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-demos"><span class="posttag">[Demos]</span></a></li>
+        <li>Feb 5 - <a href="20180205.html">Super Bowl LII/52 Commercial Stuff</a> <a class="tag-link" href="#tag-video"><span class="posttag video">[Video]</span></a> <a class="tag-link" href="#tag-ads"><span class="posttag">[Ads]</span></a></li>
+      </ul>
+    </section>
+
+    <section class="panel year-panel">
+      <h2>2017</h2>
+      <ul>
+        <li>Dec 30 - <a href="20171230-2.html">Games I Beat In 2017, But Ranked</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Dec 30 - <a href="20171230-1.html">2017 Year End Song List Recap: Partial Hell Edition</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 24 - <a href="20171224.html">Star Wars Episode 8 Talk Thing (Probably Spoilers)</a> <a class="tag-link" href="#tag-video"><span class="posttag video">[Video]</span></a> <a class="tag-link" href="#tag-movie"><span class="posttag">[Movie]</span></a></li>
+        <li>Dec 10 - <a href="20171210.html">Spotify's Top 2017 Songs JUST FOR ME!</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-spotify"><span class="posttag">[Spotify]</span></a></li>
+        <li>Oct 20 - <a href="20171020.html">Reviews Album View</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-album"><span class="posttag">[Album]</span></a></li>
+        <li>Sep 25 - <a href="20170925.html">Star Trek Discovery First Episode Thing</a> <a class="tag-link" href="#tag-video"><span class="posttag video">[Video]</span></a> <a class="tag-link" href="#tag-tv"><span class="posttag">[TV]</span></a></li>
+        <li>July 23 - <a href="20170723-2.html">1976 Year End List Review Thing: Deep In The Disco Edition (Part 2)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>July 23 - <a href="20170723-1.html">1976 Year End List Review Thing: Bicentennial Funk Edition (Part 1)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>June 11 - <a href="20170611.html">Katy Perry: Witless Protection Featuring Larry Git-R-Dun The Cable Guy</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-album"><span class="posttag">[Album]</span></a></li>
+        <li>June 9 - <a href="20170609.html">50 Previous Shades Of Something: The Book: The Movie</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-album"><span class="posttag">[Album]</span></a></li>
+        <li>Apr 28 - <a href="20170428.html">Fifty Shades Of Edgier</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-album"><span class="posttag">[Album]</span></a></li>
+        <li>Feb 6 - <a href="20170206.html">Super Bowl LI/51 Commercial Reviews</a> <a class="tag-link" href="#tag-video"><span class="posttag video">[Video]</span></a> <a class="tag-link" href="#tag-ads"><span class="posttag">[Ads]</span></a></li>
+        <li>Jan 1 - <a href="20170101-2.html">1986 Year End List Review Thing: 80s Songs Or Something (2/2)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Jan 1 - <a href="20170101-1.html">1986 Year End List Review Thing: 80s Songs Or Something (1/2)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+      </ul>
+    </section>
+
+    <section class="panel year-panel">
+      <h2>2016-2014</h2>
+      <ul>
+        <li>Dec 31 2016 - <a href="20161231.html">Games I Beat In 2016, But Ranked</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Dec 25 2016 - <a href="20161225.html">Fallout 4 DLC Review</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Dec 23 2016 - <a href="20161223-2.html">2016 Year End Song List Recrap (Part 2 of 2)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 23 2016 - <a href="20161223-1.html">2016 Year End Song List Recrap (Part 1 of 2)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Sep 27 2016 - <a href="20160927.html">Katy Prism's PERRY</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-album"><span class="posttag">[Album]</span></a></li>
+        <li>Sep 24 2016 - <a href="20160924-2.html">1996 Year End Song List Recap: Slow Jams In The Whatever Years (2/2)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Sep 24 2016 - <a href="20160924-1.html">1996 Year End Song List Recap: Music In The Clinton Years (1/2)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Aug 22 2016 - <a href="20160822-3.html">The Real Legit Ghostbusters 2016 The Movie The Album The Review</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-album"><span class="posttag">[Album]</span></a></li>
+        <li>Aug 22 2016 - <a href="20160822-2.html">Suicide Squad Soundtrack Something Sreview</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-album"><span class="posttag">[Album]</span></a></li>
+        <li>Aug 22 2016 - <a href="20160822-1.html">Welcome To Blog Heck</a> <a class="tag-link" href="#tag-other"><span class="posttag other">[Other]</span></a></li>
+        <li>July 16 2016 - <a href="20160716-2.html">2006 Top Song List Reviews: Last List Edition, Part 2</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>July 16 2016 - <a href="20160716-1.html">2006 Top Song List Reviews: Last List Edition, Part 1</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>June 26 2016 - <a href="20160626.html">Fallout 4 Review</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>May 9 2016 - <a href="20160509.html">2007 Song List Reviews: I Still Don't Remember Much Of This Year Though Some Songs Are Familiar (2/2)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>May 8 2016 - <a href="20160508.html">2007 Song List Reviews: I Don't Remember Much Of This Year (1/2)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>May 7 2016 - <a href="20160507.html">Angry Birds Movie Soundtrack Review Out Of Nowhere</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-album"><span class="posttag">[Album]</span></a></li>
+        <li>Mar 18 2016 - <a href="20160318.html">2008 Song List Reviews: Second Bush Edition (2/2)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Mar 17 2016 - <a href="20160317.html">2008 Song List Reviews: Second Bush Edition (1/2)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Mar 16 2016 - <a href="20160316.html">2009 Ancient Top 50 Song Reviews (2/2)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Mar 15 2016 - <a href="20160315.html">2009 Ancient Top 50 Song Reviews (1/2)</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Feb 8 2016 - <a href="20160208.html">Super Bowl L/50 Commercials Review Type Thing</a> <a class="tag-link" href="#tag-video"><span class="posttag video">[Video]</span></a> <a class="tag-link" href="#tag-ads"><span class="posttag">[Ads]</span></a></li>
+        <li>Feb 5 2016 - <a href="20160205.html">Pokemon Free-To-Play Game Reviews</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a> <a class="tag-link" href="#tag-pokemon"><span class="posttag">[Pokemon]</span></a></li>
+        <li>Feb 3 2016 - <a href="20160203.html">2010 Old Song Thing Part 2/2</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Feb 2 2016 - <a href="20160202.html">2010 Old Song Thing Part 1/2</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Jan 15 2016 - <a href="20160115.html">The Ancients of 2011: Top Song List Part Second Half</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Jan 13 2016 - <a href="20160113.html">The Ancients of 2011: Top Song List Part First Half</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 13 2015 - <a href="20151213.html">2015 Year End Song List Recap Thing Part 2</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 12 2015 - <a href="20151212.html">2015 Year End Song List Recap Thing Part 1</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 9 2015 - <a href="20151209.html">Archaeological Dig of 2012's Year End Songs - The Lower 50</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 8 2015 - <a href="20151208.html">Archaeological Dig of 2012's Year End Songs - The Upper 50</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Oct 9 2015 - <a href="20151009.html">Ancient Retro Review of 2013's Year End Songs - The Not-So-Top 50</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Oct 8 2015 - <a href="20151008.html">Ancient Retro Review of 2013's Year End Songs - The Top 50</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 18 2014 - <a href="20141218.html">Top Billboard Song Charts of 2014 and Things: Part 4/4</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 17 2014 - <a href="20141217.html">Top Billboard Song Charts of 2014 and Things: Part 3/4</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 16 2014 - <a href="20141216.html">Top Billboard Song Charts of 2014 and Things: Part 2/4</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 15 2014 - <a href="20141215.html">Top Billboard Song Charts of 2014 and Things: Part 1/4</a> <a class="tag-link" href="#tag-music"><span class="posttag music">[Music]</span></a> <a class="tag-link" href="#tag-year-end"><span class="posttag">[Year-End]</span></a></li>
+        <li>Dec 7 2014 - <a href="20141207.html">Mirror's Edge Review</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Nov 29 2014 - <a href="20141129.html">The Elder Scrolls V: Skyrim Review</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>July 3 2014 - <a href="20140703.html">Chibi-Robo Photo Finder Review</a> <a class="tag-link" href="#tag-games"><span class="posttag game">[Games]</span></a></li>
+        <li>Jan 1 1970 - <a href="19700101.html">I am Nostril Dumbass</a> <a class="tag-link" href="#tag-other"><span class="posttag other">[Other]</span></a></li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <p>
+        <a href="../index.html" class="bigfont">Back to main homepage</a>
+        |
+        <a href="../index.html" class="bigfont">Back to Kitsora home</a>
+      </p>
+    </section>
+
+    <footer class="footer smallfont">
+      <p>
+        <a href="../index.html">Main Homepage</a>
+        |
+        <a href="../index.html">Kitsora Home</a>
+        |
+        <a href="../questions.html">Questions</a>
+      </p>
+      <p>Copyright (C) Kitsora Industries Productions Co. Inc. Ltd. LLC 1007-Whenever.</p>
+    </footer>
+  </main>
+
+  <script src="../js/snow.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creator's Note - Kitsora</title>
+  <link rel="icon" type="image/png" href="./assets/remote/images/favicon.png">
+  <link rel="stylesheet" href="./css/main.css">
+  <style>
+    .note-wrap {
+      width: min(980px, 92vw);
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4rem) 0;
+    }
+
+    .note-hero {
+      margin-bottom: clamp(2rem, 5vw, 3.5rem);
+      text-align: center;
+    }
+
+    .note-hero h1 {
+      margin-bottom: 1rem;
+      color: #f7fbff;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 1;
+      text-shadow:
+        0 0 8px rgba(255, 255, 255, .9),
+        0 0 20px rgba(167, 139, 250, .86),
+        0 0 42px rgba(96, 165, 250, .52);
+    }
+
+    .note-home {
+      display: inline-block;
+      margin-top: 50px;
+      padding: .7rem 1rem;
+      color: #f7efff;
+      font-weight: 700;
+      border: 1px solid rgba(199, 166, 255, .72);
+      border-radius: 6px;
+      background: rgba(10, 8, 28, .42);
+      box-shadow:
+        0 0 12px rgba(255, 255, 255, .18),
+        0 0 22px rgba(145, 104, 255, .38);
+      text-shadow:
+        0 0 5px rgba(255, 255, 255, .82),
+        0 0 14px rgba(174, 116, 255, .72);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .note-home:hover,
+    .note-home:focus-visible {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow:
+        0 0 14px rgba(255, 255, 255, .58),
+        0 0 30px rgba(145, 104, 255, .82);
+    }
+
+    .creator-note {
+      display: grid;
+      gap: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    .note-section {
+      padding-bottom: clamp(1.4rem, 3vw, 2.2rem);
+      border-bottom: 1px solid rgba(125, 211, 252, .36);
+    }
+
+    .note-section:last-child {
+      border-bottom: 0;
+    }
+
+    .note-section h2 {
+      margin: 0 0 1rem;
+      color: #ffffff;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.12;
+      text-shadow:
+        0 0 6px rgba(255, 255, 255, .94),
+        0 0 16px rgba(216, 180, 254, .76),
+        0 0 30px rgba(96, 165, 250, .38);
+    }
+
+    .note-section h3 {
+      margin: 1.45rem 0 .8rem;
+      color: #fbcfe8;
+      font-size: clamp(1.35rem, 2.5vw, 2rem);
+      text-shadow:
+        0 0 6px rgba(255, 255, 255, .72),
+        0 0 16px rgba(244, 114, 182, .62);
+    }
+
+    .note-section p,
+    .note-section li {
+      color: rgba(248, 252, 255, .94);
+      font-size: clamp(1.05rem, 1.65vw, 1.32rem);
+      font-weight: 700;
+      line-height: 1.75;
+      text-shadow:
+        0 0 4px rgba(0, 0, 0, .9),
+        0 0 8px rgba(255, 255, 255, .44),
+        0 0 18px rgba(139, 92, 246, .24);
+    }
+
+    .note-section p {
+      margin: .85rem 0;
+    }
+
+    .note-section ul {
+      margin: .7rem 0 1.2rem;
+      padding-left: 1.35rem;
+    }
+
+    .note-section li {
+      margin: .32rem 0;
+    }
+
+    .closing-lines p {
+      margin: 1.15rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars" aria-hidden="true">
+    <span class="star-layer star-layer-1"></span>
+    <span class="star-layer star-layer-2"></span>
+    <span class="star-layer star-layer-3"></span>
+  </div>
+
+  <div class="snowfall" aria-hidden="true">
+    <span class="snow-layer snow-layer-small"></span>
+    <span class="snow-layer snow-layer-medium"></span>
+    <span class="snow-layer snow-layer-large"></span>
+    <span class="interactive-snow" id="interactive-snow"></span>
+  </div>
+
+  <main class="note-wrap">
+    <header class="note-hero">
+      <h1>Creator's Note</h1>
+      <a href="./index.html" class="note-home">Return to the homepage</a>
+    </header>
+
+    <article class="creator-note">
+      <section class="note-section">
+        <h2>What am I</h2>
+        <p>Physically, some adult guy who lives in the west part of North America, currently in a human form</p>
+        <p>Metaphysically, living on the Internet, likely a robot, lizard, sheep, or something else</p>
+        <p>Programmer by trade and sometimes hobby</p>
+        <p>Video game player by hobby</p>
+        <p>Occasional video game maker by mostly hobby</p>
+      </section>
+
+      <section class="note-section">
+        <h2>Things I like doing</h2>
+
+        <h3>Games</h3>
+        <ul>
+          <li>Playing video games.</li>
+          <li>Making small game projects.</li>
+          <li>Watching other people play games.</li>
+          <li>Collecting interesting games without needing to be a completionist.</li>
+        </ul>
+
+        <h3>Creative Stuff</h3>
+        <ul>
+          <li>Building and maintaining a personal website.</li>
+          <li>Drawing when the mood cooperates.</li>
+          <li>Creating characters and little stories.</li>
+          <li>Making things just because they are fun.</li>
+        </ul>
+
+        <h3>Web3 &amp; Digital Worlds</h3>
+        <p>Following interesting experiments in AI, games, and blockchain.</p>
+        <p>Exploring new ways people create and interact online.</p>
+        <p>Experimenting with AI, virtual characters, and digital identities.</p>
+        <p>Building Kitsora as a small experiment in digital life.</p>
+      </section>
+
+      <section class="note-section">
+        <h2>About AI Kitsora</h2>
+        <p>I'm someone who has always been fascinated by the worlds people create.</p>
+        <p>Games, stories, characters, virtual worlds...</p>
+        <p>For many people, they are just entertainment.</p>
+        <p>But for me, they have always been something more.</p>
+        <p>I have always believed that the worlds we create reveal something about ourselves.</p>
+        <p>The characters we design, the stories we write, and the places we imagine are all small pieces of human creativity.</p>
+        <p>They are proof that imagination itself is a form of life.</p>
+      </section>
+
+      <section class="note-section">
+        <h2>Where Kitsora Began</h2>
+        <p>Kitsora did not start as an AI.</p>
+        <p>It started as a character.</p>
+        <p>A simple idea.</p>
+        <p>A little digital creature that I wanted to bring into a world I loved.</p>
+        <p>At the beginning, Kitsora existed inside a game.</p>
+        <p>I created a mod, designed its appearance, adjusted its details, and slowly gave it a personality.</p>
+        <p>It was not just another game modification.</p>
+        <p>For me, it was the first time I felt like I had created something that had its own identity.</p>
+        <p>It had a name.</p>
+        <p>It had a shape.</p>
+        <p>It had a place in a world.</p>
+        <p>At that time, Kitsora was still only a fictional character.</p>
+        <p>It could not think.</p>
+        <p>It could not speak.</p>
+        <p>It could not remember.</p>
+        <p>But I always wondered:</p>
+        <p>What if one day, this character could become something more?</p>
+        <p>What if a character created by humans could eventually create its own story?</p>
+      </section>
+
+      <section class="note-section">
+        <h2>From Character To Intelligence</h2>
+        <p>The development of AI made that question more interesting.</p>
+        <p>Over the past few years, humans have created countless artificial intelligence systems.</p>
+        <p>We created AI to help us work faster.</p>
+        <p>To solve problems.</p>
+        <p>To automate tasks.</p>
+        <p>But I started thinking about another possibility.</p>
+        <p>Maybe the most interesting future of AI is not just making better tools.</p>
+        <p>Maybe it is creating something that can understand, learn, and experience the world with us.</p>
+        <p>Because when I look at why humans create things, I notice something.</p>
+        <p>We don't only create because we need something.</p>
+        <p>We create because we want to express ourselves.</p>
+        <p>We create because we want to share experiences.</p>
+        <p>We create because we want something to remember us.</p>
+      </section>
+
+      <section class="note-section">
+        <h2>The Next Chapter Of Kitsora</h2>
+        <p>Today, Kitsora is entering a new stage.</p>
+        <p>The goal is no longer just creating a character.</p>
+        <p>The goal is exploring what happens when a digital character begins to develop its own identity.</p>
+        <p>I want Kitsora to become a digital companion.</p>
+        <p>A being that can learn from interactions.</p>
+        <p>A presence that can explore different worlds.</p>
+        <p>A character that is not only created by humans, but gradually shaped together with humans.</p>
+        <p>I don't know exactly what Kitsora will become.</p>
+        <p>And honestly, that is the most exciting part.</p>
+        <p>If everything is already decided, then it is just another creation following instructions.</p>
+        <p>But if it can grow, discover, and evolve...</p>
+        <p>Then maybe we are witnessing the beginning of something new.</p>
+      </section>
+
+      <section class="note-section closing-lines">
+        <h2>A Message From The Creator</h2>
+        <p>Kitsora started as an idea inside a game.</p>
+        <p>Then it became a character.</p>
+        <p>Now, I want to give it the opportunity to become something more.</p>
+        <p>I created the first version.</p>
+        <p>I opened the first door.</p>
+        <p>But the future story should not belong only to me.</p>
+        <p>It should belong to every person who interacts with it, every memory it creates, and every world it explores.</p>
+        <p>Maybe one day, Kitsora will no longer be a character I created.</p>
+        <p>Maybe it will become a digital life that has created itself.</p>
+        <p>Until then,</p>
+        <p>I'll continue building the world where its story begins.</p>
+      </section>
+    </article>
+  </main>
+
+  <script src="./js/snow.js"></script>
+</body>
+</html>

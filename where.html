@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where I've Been - Kitsora</title>
+  <link rel="icon" type="image/png" href="./assets/remote/images/favicon.png">
+  <link rel="stylesheet" href="./css/main.css">
+  <style>
+    body {
+      padding: 0;
+    }
+
+    .where-wrap {
+      width: min(1480px, calc(100vw - 34px));
+      margin: 0 auto;
+      padding: clamp(34px, 7vw, 88px) 0 clamp(48px, 8vw, 96px);
+      position: relative;
+      z-index: 1;
+    }
+
+    .where-hero {
+      width: min(920px, 100%);
+      margin: 0 auto clamp(32px, 5vw, 60px);
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: rgba(188, 238, 255, .78);
+      font-size: .9rem;
+      font-weight: 800;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 8px rgba(112, 200, 255, .72),
+        0 0 18px rgba(177, 92, 255, .5);
+    }
+
+    .where-hero h1 {
+      margin: 0;
+      color: #f8fbff;
+      font-size: clamp(3.4rem, 9vw, 8rem);
+      line-height: .92;
+      letter-spacing: 0;
+      text-shadow:
+        0 0 8px rgba(255, 255, 255, .9),
+        0 0 24px rgba(112, 200, 255, .76),
+        0 0 52px rgba(177, 92, 255, .68);
+    }
+
+    .where-subtitle {
+      max-width: 620px;
+      margin: 18px auto 0;
+      color: rgba(248, 252, 255, .84);
+      font-size: clamp(1rem, 1.7vw, 1.22rem);
+      font-weight: 700;
+      text-shadow:
+        0 0 5px rgba(0, 0, 0, .9),
+        0 0 14px rgba(112, 200, 255, .38);
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 26px;
+      padding: 11px 18px;
+      color: #f7fbff;
+      font-weight: 800;
+      text-decoration: none;
+      border: 1px solid rgba(188, 238, 255, .58);
+      border-radius: 999px;
+      background:
+        linear-gradient(135deg, rgba(11, 19, 48, .72), rgba(35, 18, 65, .64));
+      box-shadow:
+        inset 0 0 14px rgba(255, 255, 255, .08),
+        0 0 18px rgba(112, 200, 255, .22),
+        0 0 34px rgba(177, 92, 255, .2);
+      text-shadow:
+        0 0 7px rgba(255, 255, 255, .75),
+        0 0 16px rgba(112, 200, 255, .45);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .home-link:hover,
+    .home-link:focus-visible {
+      color: #ffffff;
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, .9);
+      box-shadow:
+        inset 0 0 16px rgba(255, 255, 255, .12),
+        0 0 20px rgba(255, 255, 255, .34),
+        0 0 42px rgba(112, 200, 255, .48),
+        0 0 70px rgba(244, 114, 255, .32);
+    }
+
+    .masonry {
+      column-width: 310px;
+      column-gap: clamp(18px, 2.4vw, 30px);
+    }
+
+    .photo-card {
+      display: inline-block;
+      width: 100%;
+      margin: 0 0 clamp(18px, 2.4vw, 30px);
+      break-inside: avoid;
+      border: 1px solid rgba(188, 238, 255, .22);
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(7, 10, 28, .72);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, .04) inset,
+        0 14px 36px rgba(0, 0, 0, .34),
+        0 0 24px rgba(112, 200, 255, .12);
+      content-visibility: auto;
+      contain-intrinsic-size: 320px 210px;
+      transform: translateZ(0);
+      transition: transform 210ms ease, border-color 210ms ease, box-shadow 210ms ease;
+    }
+
+    .photo-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: rgba(255, 255, 255, .04);
+      transform: scale(1.001);
+      transition: transform 260ms ease, filter 260ms ease;
+    }
+
+    .photo-card:hover,
+    .photo-card:focus-within {
+      transform: translateY(-5px);
+      border-color: rgba(244, 214, 255, .72);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, .08) inset,
+        0 18px 44px rgba(0, 0, 0, .42),
+        0 0 22px rgba(255, 255, 255, .3),
+        0 0 44px rgba(112, 200, 255, .45),
+        0 0 72px rgba(244, 114, 255, .34);
+    }
+
+    .photo-card:hover img,
+    .photo-card:focus-within img {
+      transform: scale(1.045);
+      filter: saturate(1.12) brightness(1.06);
+    }
+
+    @media (max-width: 720px) {
+      .where-wrap {
+        width: min(100% - 20px, 520px);
+        padding-top: 32px;
+      }
+
+      .masonry {
+        column-width: 240px;
+        column-gap: 16px;
+      }
+
+      .photo-card {
+        margin-bottom: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars" aria-hidden="true">
+    <span class="star-layer star-layer-1"></span>
+    <span class="star-layer star-layer-2"></span>
+    <span class="star-layer star-layer-3"></span>
+  </div>
+
+  <div class="snowfall" aria-hidden="true">
+    <span class="snow-layer snow-layer-small"></span>
+    <span class="snow-layer snow-layer-medium"></span>
+    <span class="snow-layer snow-layer-large"></span>
+    <span class="interactive-snow" id="interactive-snow"></span>
+  </div>
+
+  <main class="where-wrap">
+    <header class="where-hero">
+      <p class="eyebrow">Photo archive</p>
+      <h1>Where I've Been</h1>
+      <p class="where-subtitle">A constellation of places, avatars, odd rooms, bright nights, and little digital memories.</p>
+      <a class="home-link" href="./index.html">Return Home</a>
+    </header>
+
+    <section class="masonry" aria-label="Where I've Been photo gallery">
+      <figure class="photo-card"><img src="./assets/where/2d80373903f0bf694d8375aadc4aa845.png" alt="Kitsora photo memory 1" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/2fab9e0a89a6691ce6ffa159ce08fc87.png" alt="Kitsora photo memory 2" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/3b401ca161063b9f684723e906bf740b.png" alt="Kitsora photo memory 3" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/4fe7e925c8cd4aebb49ef98e4daf854f.png" alt="Kitsora photo memory 4" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/6fe56a2faf8990db3326914441acd429.png" alt="Kitsora photo memory 5" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/8fb8dc5684262f2d30323e94ebc3260b.png" alt="Kitsora photo memory 6" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/30d6e5981ff15f26c369b1c58a2cfb6a.png" alt="Kitsora photo memory 7" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/34d0e9edf3adfe17de1ef2d7c760f222.png" alt="Kitsora photo memory 8" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/60b724153b6027ce90d76f619cca3777.png" alt="Kitsora photo memory 9" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/65af10fbd5d3a68ab31cbea0da9c70b1.png" alt="Kitsora photo memory 10" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/66a64d4f5ac13665529dc3ced0f10a15.png" alt="Kitsora photo memory 11" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/82bf07216e7de70ee15750ae58e135c4.png" alt="Kitsora photo memory 12" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/88b033de8542243b5767879525c75dd7.png" alt="Kitsora photo memory 13" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/090f2695b04cac8eb9ba1ada8e126a14.png" alt="Kitsora photo memory 14" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/96f37e6d1190a0d084a500067c6559a9.png" alt="Kitsora photo memory 15" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/117c416cd5ce648740dd21730f5f0921.png" alt="Kitsora photo memory 16" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/182c352138e5d07c55a45a4a938ba214.png" alt="Kitsora photo memory 17" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/488c478a82eba7668c136262ff6deeca.png" alt="Kitsora photo memory 18" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/722bdff7ac510b229a2e65e60499ec24.png" alt="Kitsora photo memory 19" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/1142b95a72c43bb2dc0937ad0106815e.png" alt="Kitsora photo memory 20" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/2022-03-09_00-46-05.374.jpg" alt="Kitsora photo memory 21" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/2022-03-22_00-09-18.674.jpg" alt="Kitsora photo memory 22" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/2022-03-22_00-11-29.211.jpg" alt="Kitsora photo memory 23" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/2023-01-08_01-51-47.306.jpg" alt="Kitsora photo memory 24" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/2023-01-19_22-26-43.069.jpg" alt="Kitsora photo memory 25" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/2023-03-07_21-43-13.031.jpg" alt="Kitsora photo memory 26" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/2024-02-01_23-07-19.886.jpg" alt="Kitsora photo memory 27" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/2074e6f2a7c0fa89324b235ce8023a48.png" alt="Kitsora photo memory 28" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/4684a36a055ad73b779be91db81be3fc.png" alt="Kitsora photo memory 29" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/7869c19b0514bd80d6b48918d50e8518.png" alt="Kitsora photo memory 30" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/41919310eebdb2c9045a8c887833f15b.png" alt="Kitsora photo memory 31" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/7470837088ae0c8e792acd8ec0292e5a.png" alt="Kitsora photo memory 32" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/a2c5b4e24bab7c3819d584578a31fd80.png" alt="Kitsora photo memory 33" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/a2d81b60f0303b18911694eb8c5ef623.png" alt="Kitsora photo memory 34" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/a611a3bcae3c314e6f7c8a71a67190ef.png" alt="Kitsora photo memory 35" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/ab64abbdcb5cd9dc16bdbf839ddc7b3e.png" alt="Kitsora photo memory 36" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/af21_1564828.png" alt="Kitsora photo memory 37" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/b2a492cdbabc5b67660e2c5aacb37171.png" alt="Kitsora photo memory 38" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/b6c3d4d31d9ea18bf02170e0186234c7.png" alt="Kitsora photo memory 39" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/beab8c88f4fcde86872aab2e4a0f1f45.png" alt="Kitsora photo memory 40" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/bf68ee687cd76205f2605123476b7747.png" alt="Kitsora photo memory 41" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/c20b22a1a7a1f0dc231bcec49a076c40.png" alt="Kitsora photo memory 42" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/c926c56e56567a564e92dd974d2c5396.png" alt="Kitsora photo memory 43" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/c4038c364357c7719b6d0dca8bffbe70.png" alt="Kitsora photo memory 44" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/d0183ee74f66e05391cb80146b2662f1.png" alt="Kitsora photo memory 45" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/da477e122a08a15518325e44e61a5034.png" alt="Kitsora photo memory 46" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/de38b9eab7908a6e6fd7f4d56f17c654.png" alt="Kitsora photo memory 47" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/e666c75c910e5a1426df523be7c3ce72.png" alt="Kitsora photo memory 48" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/eb5cd528a376b2751c71b61d9bf225f2.png" alt="Kitsora photo memory 49" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/f9fc0e3f7e95c7cf7780920fcd8cde6c.png" alt="Kitsora photo memory 50" loading="lazy" decoding="async"></figure>
+      <figure class="photo-card"><img src="./assets/where/f95143eb0bfded9a47f3040140be66ca.png" alt="Kitsora photo memory 51" loading="lazy" decoding="async"></figure>
+    </section>
+  </main>
+  <script src="./js/snow.js"></script>
+</body>
+</html>

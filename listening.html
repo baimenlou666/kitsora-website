@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Songs of Whenever - Kitsora</title>
+  <link rel="icon" type="image/png" href="./assets/remote/images/favicon.png">
+  <link rel="stylesheet" href="./css/main.css">
+  <style>
+    body {
+      padding: 10pt;
+    }
+
+    .listen-wrap {
+      width: min(100%, calc(100vw - 20pt));
+      margin: 0;
+      padding: 0 0 34pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .listen-hero {
+      margin: 0 0 5pt;
+    }
+
+    .listen-hero h1 {
+      margin: 0 0 7pt;
+      color: #ffffff;
+      font-size: 1.62rem;
+      line-height: 1.12;
+      letter-spacing: 0;
+      text-shadow:
+        0 0 4px rgba(255, 255, 255, .92),
+        0 0 9px rgba(112, 200, 255, .72),
+        0 0 18px rgba(177, 92, 255, .48);
+    }
+
+    .listen-intro {
+      max-width: none;
+      margin: 0 0 5pt;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+      color: #f8f3ff;
+      font-size: .78rem;
+      line-height: 1.35;
+      text-align: left;
+      text-shadow:
+        0 0 4px rgba(0, 0, 0, .94),
+        0 0 8px rgba(112, 200, 255, .24);
+    }
+
+    .listen-intro p {
+      margin: 4pt 0;
+    }
+
+    .home-link {
+      display: inline-block;
+      align-items: center;
+      justify-content: center;
+      margin-top: 8pt;
+      padding: 8px 13px;
+      color: #f7fbff;
+      font-weight: 800;
+      text-decoration: none;
+      border: 1px solid rgba(188, 238, 255, .58);
+      border-radius: 999px;
+      background:
+        linear-gradient(135deg, rgba(11, 19, 48, .72), rgba(35, 18, 65, .64));
+      box-shadow:
+        inset 0 0 14px rgba(255, 255, 255, .08),
+        0 0 18px rgba(112, 200, 255, .22),
+        0 0 34px rgba(177, 92, 255, .2);
+      text-shadow:
+        0 0 7px rgba(255, 255, 255, .75),
+        0 0 16px rgba(112, 200, 255, .45);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .home-link:hover,
+    .home-link:focus-visible {
+      color: #ffffff;
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, .9);
+      box-shadow:
+        inset 0 0 18px rgba(255, 255, 255, .12),
+        0 0 24px rgba(112, 200, 255, .46),
+        0 0 44px rgba(255, 116, 220, .28);
+    }
+
+    .song-area {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+
+    .song-list {
+      margin: 0;
+    }
+
+    .songentry {
+      margin: 6pt 2pt;
+      padding: 2pt;
+      position: relative;
+      width: min(400pt, 100%);
+      min-height: 66px;
+      border-radius: 10pt;
+      background-color: #ccf;
+      box-shadow:
+        2pt 2pt 2pt 0 rgba(0, 0, 0, .5),
+        0 0 10px rgba(130, 205, 255, .26),
+        0 0 20px rgba(177, 92, 255, .14);
+      color: #080820;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .songentry:hover,
+    .songentry:focus-within {
+      transform: translateY(-1px);
+      box-shadow:
+        2pt 2pt 2pt 0 rgba(0, 0, 0, .5),
+        0 0 18px rgba(130, 205, 255, .52),
+        0 0 28px rgba(255, 116, 220, .24);
+    }
+
+    .songdate {
+      margin: 2pt;
+      padding: 2pt;
+      padding-right: 86px;
+      color: #14143a;
+      font-size: 1.2rem;
+      font-weight: 400;
+      text-shadow: none;
+    }
+
+    .songinfo {
+      margin: 2pt;
+      padding: 2pt 5pt;
+      padding-right: 86px;
+      border: 2pt #03d inset;
+      border-radius: 10pt;
+      background-color: #9cf;
+      color: #050533;
+      font-size: 1.08rem;
+      font-weight: 600;
+      text-shadow: none;
+    }
+
+    .songinfo[title] {
+      cursor: help;
+    }
+
+    .artist {
+      margin: 2pt;
+      padding: 1pt 4pt;
+      border-radius: 10pt;
+      background-color: #ddf;
+      color: #14143a;
+      font-size: 1rem;
+      font-weight: 100;
+      text-align: right;
+    }
+
+    .songlink {
+      margin-right: 2pt;
+      margin-left: 0;
+      position: absolute;
+      right: 0;
+      top: 3pt;
+      padding: 1pt 5pt;
+      border: 2pt #fc0 outset;
+      border-radius: 10pt;
+      background-color: #fdb;
+      font-size: 1.2rem;
+      font-weight: 600;
+      box-shadow:
+        0 0 8px rgba(255, 204, 0, .36),
+        0 0 16px rgba(255, 255, 255, .18);
+    }
+
+    .songlink a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: #06f;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .songlink a:hover,
+    .songlink a:focus-visible {
+      color: #00f;
+      text-shadow:
+        0 0 4px rgba(255, 255, 255, .9),
+        0 0 9px rgba(112, 200, 255, .75);
+    }
+
+    .linkicon {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+      image-rendering: pixelated;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, .35));
+    }
+
+    .loading,
+    .error {
+      padding: 18px;
+      border: 1px dashed rgba(255, 214, 107, .55);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .06);
+      color: rgba(248, 243, 255, .86);
+      font-weight: 700;
+    }
+
+    @media screen and (max-width: 720px) {
+      .songentry {
+        width: 100%;
+      }
+
+      .songdate,
+      .songinfo {
+        padding-right: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true">
+    <span class="star-layer star-layer-1"></span>
+    <span class="star-layer star-layer-2"></span>
+    <span class="star-layer star-layer-3"></span>
+  </div>
+  <div class="snowfall" aria-hidden="true">
+    <span class="snow-layer snow-layer-small"></span>
+    <span class="snow-layer snow-layer-medium"></span>
+    <span class="snow-layer snow-layer-large"></span>
+    <span class="interactive-snow" id="interactive-snow"></span>
+  </div>
+
+  <main class="listen-wrap">
+    <header class="listen-hero">
+      <h1>Songs of Whenever</h1>
+    </header>
+
+    <section class="listen-intro">
+      <p>These are the songs I've felt like bringing up on the main page from time to time, with title and artist and also a link that hopefully isn't broken. Essentially if a song gets stuck in my head I'll drop it here. I'm not a fan of whatever YouTube is doing generally, but as the Internet's dumping grounds, you can find a lot of things there, such as songs, so the listen links are likely YouTube ones. The links might also be blocked by region or other arbitrary factors because companies/governments are stupid like that.</p>
+      <p>The "listen" links will open in a new window or tab, depending on your browser. There may be possible restrictions, but I try to find a generally accessible link as far as I can tell. If they don't work, then resort to other means. You can also hover over some songs to see additional thoughts.</p>
+    </section>
+
+    <section class="song-area">
+      <div id="songspot" class="song-list">
+        <noscript>Enable JavaScript, if you can, to see the list with proper formatting. Otherwise you can have a go at decoding the data file <a href="./music/songsofwhenever.json">here</a>.</noscript>
+        <div class="loading">Loading songs from the local archive...</div>
+      </div>
+    </section>
+
+    <p><a class="home-link" href="./index.html"><b>(Back to main page)</b></a></p>
+  </main>
+
+  <script>
+    function saniString(value) {
+      return String(value).replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    function linkTypeFor(link) {
+      if (link.includes("youtube.") || link.includes("youtu.be")) {
+        return "YT";
+      }
+      if (link.includes("spotify.")) {
+        return "SP";
+      }
+      if (link.includes("soundcloud.")) {
+        return "SC";
+      }
+      return "";
+    }
+
+    function linkTitleFor(type) {
+      var label = "Opens in new tab/window - ";
+      if (type === "YT") {
+        return label + "YouTube (Warning: Links may break at any time for any reason or any region. Workarounds highly encouraged as needed.)";
+      }
+      if (type === "SP") {
+        return label + "Spotify (Note: Requires modern DRM-enabled browser with at least free account to hear full song, if allowed in current region.)";
+      }
+      if (type === "SC") {
+        return label + "SoundCloud";
+      }
+      return label;
+    }
+
+    function iconFor(type) {
+      if (type === "YT") {
+        return "./assets/remote/images/icon_youtube.png";
+      }
+      if (type === "SP") {
+        return "./assets/remote/images/icon_spotify.png";
+      }
+      return "";
+    }
+
+    function renderSongList(songObj) {
+      var songDumpZone = document.getElementById("songspot");
+      var entries = Array.isArray(songObj.entries) ? songObj.entries : [];
+      var songDumpHTML = "";
+
+      entries.forEach(function(item, index) {
+        var sanDate = saniString(item.date);
+        var sanTitle = saniString(item.title);
+        var sanArtist = saniString(item.artist);
+        var sanInfo = item.info !== undefined ? saniString(item.info) : "";
+        var type = linkTypeFor(item.link);
+        var icon = iconFor(type);
+
+        songDumpHTML += "<div class=\"songentry\" id=\"song-" + index + "\">";
+        songDumpHTML += "<div class=\"songdate\">" + sanDate + "</div>";
+        songDumpHTML += "<div class=\"songinfo\"" + (sanInfo ? " title=\"" + sanInfo + "\"" : "") + ">";
+        songDumpHTML += sanTitle + "<div class=\"artist\">" + sanArtist + "</div></div>";
+        songDumpHTML += "<div class=\"songlink\"><a href=\"" + item.link + "\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"" + linkTitleFor(type) + "\">Listen";
+        if (icon) {
+          songDumpHTML += " <img class=\"linkicon\" src=\"" + icon + "\" alt=\"\">";
+        }
+        songDumpHTML += "</a></div></div>";
+      });
+
+      songDumpZone.innerHTML = songDumpHTML || "<div class=\"error\">No songs were found in the archive data.</div>";
+    }
+
+    function showSongError() {
+      document.getElementById("songspot").innerHTML = "<div class=\"error\">The music archive could not be loaded. Try opening the data file directly.</div>";
+    }
+
+    fetch("./music/songsofwhenever.json")
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error("Unable to load archive");
+        }
+        return response.json();
+      })
+      .then(renderSongList)
+      .catch(showSongError);
+  </script>
+  <script src="./js/snow.js"></script>
+</body>
+</html>

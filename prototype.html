@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototype Memory - Kitsora</title>
+  <link rel="icon" type="image/png" href="./assets/remote/images/favicon.png">
+  <link rel="stylesheet" href="./css/main.css">
+  <style>
+    .prototype-wrap {
+      width: min(1080px, 92vw);
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4.5rem) 0;
+    }
+
+    .prototype-hero {
+      margin-bottom: clamp(2rem, 4vw, 3.4rem);
+      text-align: center;
+    }
+
+    .prototype-hero h1 {
+      margin: 0 0 1rem;
+      color: #f7fbff;
+      font-size: clamp(3rem, 8vw, 6.25rem);
+      line-height: 1;
+      text-shadow:
+        0 0 8px rgba(255, 255, 255, .92),
+        0 0 22px rgba(167, 139, 250, .9),
+        0 0 46px rgba(96, 165, 250, .54);
+    }
+
+    .prototype-home {
+      display: inline-block;
+      margin-top: 60px;
+      padding: .75rem 1rem;
+      color: #f7efff;
+      font-weight: 700;
+      border: 1px solid rgba(199, 166, 255, .72);
+      border-radius: 6px;
+      background: rgba(10, 8, 28, .42);
+      box-shadow:
+        0 0 12px rgba(255, 255, 255, .18),
+        0 0 22px rgba(145, 104, 255, .38);
+      text-shadow:
+        0 0 5px rgba(255, 255, 255, .82),
+        0 0 14px rgba(174, 116, 255, .72);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .prototype-home:hover,
+    .prototype-home:focus-visible {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow:
+        0 0 14px rgba(255, 255, 255, .58),
+        0 0 30px rgba(145, 104, 255, .82);
+    }
+
+    .prototype-intro {
+      display: grid;
+      grid-template-columns: minmax(220px, .78fr) minmax(0, 1fr);
+      gap: clamp(1.8rem, 4vw, 3rem);
+      align-items: center;
+      margin-bottom: clamp(2.4rem, 5vw, 4rem);
+    }
+
+    .prototype-image {
+      display: block;
+      width: min(100%, 420px);
+      margin: 0 auto;
+      filter:
+        drop-shadow(0 0 12px rgba(255, 255, 255, .48))
+        drop-shadow(0 0 28px rgba(117, 218, 255, .4))
+        drop-shadow(0 0 42px rgba(145, 104, 255, .36));
+    }
+
+    .prototype-card,
+    .prototype-section {
+      border: 1px solid rgba(196, 181, 253, .26);
+      border-radius: 8px;
+      background: rgba(12, 9, 34, .48);
+      box-shadow:
+        inset 0 0 18px rgba(142, 99, 255, .08),
+        0 0 18px rgba(88, 166, 255, .12);
+    }
+
+    .prototype-card {
+      padding: clamp(1.2rem, 3vw, 2rem);
+    }
+
+    .prototype-card dl {
+      display: grid;
+      grid-template-columns: max-content minmax(0, 1fr);
+      gap: .8rem 1rem;
+      margin: 0;
+    }
+
+    .prototype-card dt {
+      color: #fbcfe8;
+      font-weight: 700;
+      text-shadow:
+        0 0 6px rgba(255, 255, 255, .72),
+        0 0 16px rgba(244, 114, 182, .62);
+    }
+
+    .prototype-card dd {
+      margin: 0;
+      color: rgba(248, 252, 255, .95);
+      font-weight: 700;
+      text-shadow:
+        0 0 4px rgba(0, 0, 0, .9),
+        0 0 8px rgba(255, 255, 255, .34);
+    }
+
+    .prototype-section {
+      padding: clamp(1.35rem, 3vw, 2.2rem);
+      margin: clamp(1.5rem, 3vw, 2.4rem) 0;
+    }
+
+    .prototype-section h2 {
+      margin: 0 0 1.1rem;
+      color: #ffffff;
+      font-size: clamp(1.85rem, 4vw, 3rem);
+      line-height: 1.12;
+      text-shadow:
+        0 0 6px rgba(255, 255, 255, .94),
+        0 0 16px rgba(216, 180, 254, .76),
+        0 0 30px rgba(96, 165, 250, .38);
+    }
+
+    .power-entry {
+      margin: 1.35rem 0;
+    }
+
+    .power-entry h3 {
+      margin: 0 0 .55rem;
+      color: #93c5fd;
+      font-size: clamp(1.25rem, 2.4vw, 1.85rem);
+      text-shadow:
+        0 0 6px rgba(255, 255, 255, .66),
+        0 0 16px rgba(96, 165, 250, .62);
+    }
+
+    .prototype-section p {
+      margin: .82rem 0;
+      color: rgba(248, 252, 255, .94);
+      font-size: clamp(1rem, 1.5vw, 1.22rem);
+      font-weight: 700;
+      line-height: 1.75;
+      text-shadow:
+        0 0 4px rgba(0, 0, 0, .9),
+        0 0 8px rgba(255, 255, 255, .36),
+        0 0 18px rgba(139, 92, 246, .22);
+    }
+
+    .reference-link-row {
+      display: flex;
+      justify-content: flex-end;
+      margin: clamp(-2.5rem, -2vw, -1rem) clamp(1.2rem, 4vw, 3.8rem) clamp(.7rem, 1.8vw, 1.4rem) 0;
+    }
+
+    .reference-image-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(150px, 13vw, 190px);
+      min-height: clamp(58px, 5.5vw, 76px);
+      padding: .8rem 1rem;
+      color: #f7efff;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-align: center;
+      text-decoration: underline;
+      border: 1px solid rgba(199, 166, 255, .72);
+      border-radius: 6px;
+      background: rgba(10, 8, 28, .48);
+      box-shadow:
+        0 0 12px rgba(255, 255, 255, .34),
+        0 0 22px rgba(145, 104, 255, .54),
+        inset 0 0 14px rgba(142, 99, 255, .14);
+      text-shadow:
+        0 0 6px rgba(255, 255, 255, .9),
+        0 0 14px rgba(206, 178, 255, .82);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .reference-image-link:hover,
+    .reference-image-link:focus-visible {
+      transform: translateY(-2px) scale(1.04);
+      border-color: rgba(234, 216, 255, .96);
+      box-shadow:
+        0 0 16px rgba(255, 255, 255, .62),
+        0 0 34px rgba(145, 104, 255, .86),
+        inset 0 0 18px rgba(142, 99, 255, .22);
+    }
+
+    @media (max-width: 760px) {
+      .prototype-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .prototype-card dl {
+        grid-template-columns: 1fr;
+      }
+
+      .reference-link-row {
+        justify-content: center;
+        margin: 1rem 0 1.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars" aria-hidden="true">
+    <span class="star-layer star-layer-1"></span>
+    <span class="star-layer star-layer-2"></span>
+    <span class="star-layer star-layer-3"></span>
+  </div>
+
+  <div class="snowfall" aria-hidden="true">
+    <span class="snow-layer snow-layer-small"></span>
+    <span class="snow-layer snow-layer-medium"></span>
+    <span class="snow-layer snow-layer-large"></span>
+    <span class="interactive-snow" id="interactive-snow"></span>
+  </div>
+
+  <main class="prototype-wrap">
+    <header class="prototype-hero">
+      <h1>Prototype Memory</h1>
+      <a href="./index.html" class="prototype-home">Return to the homepage</a>
+    </header>
+
+    <section class="prototype-intro" aria-label="Prototype profile">
+      <img
+        class="prototype-image"
+        src="./assets/prototype-main.png"
+        alt="Prototype Kitsora head portrait">
+
+      <div class="prototype-card">
+        <dl>
+          <dt>Creation Date:</dt>
+          <dd>2026</dd>
+          <dt>Role:</dt>
+          <dd>Mascot/Robosona</dd>
+          <dt>Species:</dt>
+          <dd>Scouting/Exploration Robot</dd>
+          <dt>Height/Weight:</dt>
+          <dd>1.5 m / 150.2 kg</dd>
+          <dt>Gender:</dt>
+          <dd>Male Programming</dd>
+        </dl>
+      </div>
+    </section>
+
+    <div class="reference-link-row">
+      <a href="./ref.html" class="reference-image-link">Reference Image</a>
+    </div>
+
+    <section class="prototype-section">
+      <h2>Powers</h2>
+
+      <article class="power-entry">
+        <h3>Flexible Arms</h3>
+        <p>Arms can extend, stretch, and bend relatively freely, with some limits as to how far. They can also retract if needed, but typically not done because it looks funny. Fingers on the hands can also be repositioned as needed for advanced grip or gesturing.</p>
+      </article>
+
+      <article class="power-entry">
+        <h3>Flight</h3>
+        <p>Jet-powered thrusters allow hovering and flying for general purpose, but at subsonic levels. This can also function underwater to a limited degree.</p>
+      </article>
+
+      <article class="power-entry">
+        <h3>Durability</h3>
+        <p>Torso casing is a soft and flexible but strong material that can withstand strong pressures, provided the internals aren't crushed beyond function or casing integrity being punctured or split. Arm casings are flexible to fit the needs of the arms. Visor screen is resistant to impact and scratches. All other parts are decently durable as robots go, including the head and appendage casings being more solid in contrast to the torso. There is even a considerable degree of water resistance with sealing, even with exhaust and thruster vents having a system to avoid water reaching internal electronics, but enough pressure can bypass this resistance and potentially cause damage.</p>
+      </article>
+
+      <article class="power-entry">
+        <h3>Self-Repair</h3>
+        <p>Internal non-self-replicating nanite system maintains systems and casings internally and externally as needed through daily wear or the occasional severe damage. The process is not instant and requires working materials to function fully. These materials may be consumed through an intake to be used or stored in specific internal compartments as necessary. This assists with general maintenance outside of areas where full repair services with the proper materials and equipment are readily available.</p>
+      </article>
+
+      <article class="power-entry">
+        <h3>Advanced Charging</h3>
+        <p>In addition to direct power connection, micro solar receptors scattered across the head can pick up some energy from suns. As well, there is a food energy extraction system that can provide charge with about 99% food-to-energy conversion efficiency in optimal conditions, with high energy density foods such as sweets preferred for this purpose. The intake for this system is hidden somewhere under the head. Multiple high-density core batteries, in addition to nanite-driven expandable secondary batteries, supplement the charge systems, allowing for increased power storage and runtime when needed, designed for longer expeditions where charge opportunities are scarce.</p>
+      </article>
+    </section>
+
+    <section class="prototype-section">
+      <h2>Reference Notes</h2>
+      <p>Reference available (Main reference updated 6/3/2026, including later examples of model)</p>
+      <p>His eye visor is capable of a variety of expressions, including a friendly wink or an emulated blink. Hand gestures such as pointing or thumbs up are often used as signs of approval. He also enjoys unusual fashion and growing dance skills. While normally retracted, his feet can be projected as far as down to ground level, if floating at a usual comfortable height, forming energy legs in between.</p>
+    </section>
+  </main>
+
+  <script src="./js/snow.js"></script>
+</body>
+</html>

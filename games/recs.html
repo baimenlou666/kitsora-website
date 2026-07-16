@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Recommendations - Kitsora</title>
+  <link rel="icon" type="image/png" href="../assets/remote/images/favicon.png">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .recs-intro {
+      margin-bottom: 1rem;
+    }
+
+    .system-panel {
+      margin: 1rem 0;
+      padding: 1rem;
+      border: 1px solid rgba(196, 181, 253, .28);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(17, 28, 72, .78), rgba(8, 14, 42, .72)),
+        rgba(12, 9, 34, .58);
+      box-shadow:
+        inset 0 0 18px rgba(142, 99, 255, .09),
+        0 0 20px rgba(88, 166, 255, .12);
+    }
+
+    .system-logo {
+      display: block;
+      max-width: min(360px, 100%);
+      max-height: 90px;
+      width: auto;
+      height: auto;
+      margin: 0 auto 1rem;
+      filter:
+        drop-shadow(0 0 8px rgba(255, 255, 255, .36))
+        drop-shadow(0 0 18px rgba(91, 203, 255, .22));
+    }
+
+    .rec-entry {
+      margin: .75rem 0;
+      padding: .9rem;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .055);
+      box-shadow: inset 0 0 14px rgba(255, 255, 255, .04);
+    }
+
+    .rec-title {
+      display: block;
+      margin-bottom: .3rem;
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-shadow:
+        0 0 8px rgba(196, 181, 253, .8),
+        0 0 18px rgba(139, 92, 246, .45);
+    }
+
+    .page-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem 1rem;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars" aria-hidden="true">
+    <span class="star-layer star-layer-1"></span>
+    <span class="star-layer star-layer-2"></span>
+    <span class="star-layer star-layer-3"></span>
+  </div>
+
+  <div class="snowfall" aria-hidden="true">
+    <span class="snow-layer snow-layer-small"></span>
+    <span class="snow-layer snow-layer-medium"></span>
+    <span class="snow-layer snow-layer-large"></span>
+    <span class="interactive-snow" id="interactive-snow"></span>
+  </div>
+
+  <main class="site-wrap">
+    <header class="hero">
+      <div class="hero-text">
+        <h1>Game Recommendations</h1>
+        <h3>
+          <a href="../index.html">Return to the homepage</a>
+        </h3>
+        <p class="intro">
+          Games personally enjoyed enough to recommend, grouped by the system version
+          most associated with the recommendation.
+        </p>
+      </div>
+
+      <img
+        class="site-mascot"
+        src="../assets/remote/images/skrobo_bg.png"
+        alt="Kitsora robot mascot">
+    </header>
+
+    <section class="panel recs-intro">
+      <h2>Game Recommendations</h2>
+      <p>
+        This page mirrors the original recommendation list's structure: older games,
+        system-grouped sections, and short personal notes about why each one is worth
+        checking out. If a game exists on multiple systems, it appears under the version
+        most relevant to the recommendation.
+      </p>
+      <p class="page-links">
+        <a href="../index.html" class="bigfont">Back to main homepage</a>
+        <a href="../index.html" class="bigfont">Back to Kitsora home</a>
+      </p>
+    </section>
+
+    <section class="system-panel">
+      <img class="system-logo" src="../assets/remote/images/systems/logo_nes.png" alt="Nintendo Entertainment System logo" title="Nintendo Entertainment System/Famicom">
+
+      <article class="rec-entry">
+        <span class="rec-title">Excitebike</span>
+        <p>
+          A simple motocross racing game with lane changes, boosts, jumps, and a track
+          editor. It is easy to understand and still has that quick arcade loop.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Tetris</span>
+        <p>
+          A classic version of the block-stacking formula, familiar, direct, and backed by
+          memorable music. Later versions add twists, but the basic appeal is already here.
+        </p>
+      </article>
+    </section>
+
+    <section class="system-panel">
+      <img class="system-logo" src="../assets/remote/images/systems/logo_snes.png" alt="Super Nintendo logo" title="Super Nintendo Entertainment System/Super Famicom">
+
+      <article class="rec-entry">
+        <span class="rec-title">F-Zero</span>
+        <p>
+          Fast hovercar racing with Mode 7 style and music strong enough to outlive the
+          system it launched on.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Star Fox</span>
+        <p>
+          A classic rail shooter built around Super FX polygon spectacle, selectable
+          routes, arcade pacing, and memorable boss encounters.
+        </p>
+      </article>
+    </section>
+
+    <section class="system-panel">
+      <img class="system-logo" src="../assets/remote/images/systems/logo_gcn.png" alt="Nintendo GameCube logo" title="Nintendo GameCube">
+
+      <article class="rec-entry">
+        <span class="rec-title">Animal Crossing</span>
+        <p>
+          One of the rawer versions of Animal Crossing, with unusual side features,
+          e-Reader support, and a strong sense of daily routine and atmosphere.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Chibi-Robo</span>
+        <p>
+          A tiny robot adventure set inside a house, full of odd scale, gentle charm, and
+          household problems solved through little mechanical effort.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Crazy Taxi</span>
+        <p>
+          Arcade taxi chaos with fast deliveries, compact city routes, and the extra
+          appeal of the original music and product placement in this era's ports.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Kirby Air Ride</span>
+        <p>
+          A simple-control Kirby racing game where City Trial stands out as a strange,
+          exciting scavenger-race mode built around mystery challenges.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Super Smash Bros. Melee</span>
+        <p>
+          A dense and energetic platform fighting game with a strong roster, lots of modes,
+          and a legacy that kept it alive far beyond its original console generation.
+        </p>
+      </article>
+    </section>
+
+    <section class="system-panel">
+      <img class="system-logo" src="../assets/remote/images/systems/logo_gb.png" alt="Nintendo Game Boy logo" title="Nintendo Game Boy">
+
+      <article class="rec-entry">
+        <span class="rec-title">Tetris</span>
+        <p>
+          The portable version that helped define the Game Boy, making the puzzle loop
+          feel natural in short sessions while still supporting competitive play.
+        </p>
+      </article>
+    </section>
+
+    <section class="system-panel">
+      <img class="system-logo" src="../assets/remote/images/systems/logo_3ds.png" alt="Nintendo 3DS logo" title="Nintendo 3DS">
+
+      <article class="rec-entry">
+        <span class="rec-title">Animal Crossing: New Leaf</span>
+        <p>
+          A polished Animal Crossing entry with strong quality-of-life changes, long-term
+          town progress, and enough later additions to keep it worth revisiting.
+        </p>
+      </article>
+    </section>
+
+    <section class="system-panel">
+      <img class="system-logo" src="../assets/remote/images/systems/logo_psx.png" alt="Sony PlayStation logo" title="Sony PlayStation">
+
+      <article class="rec-entry">
+        <span class="rec-title">Digimon World</span>
+        <p>
+          A strange, ambitious virtual pet RPG about raising a partner, exploring an island,
+          and rebuilding a town. Its rough edges are part of why it is memorable.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Future Cop: LAPD</span>
+        <p>
+          A gridlike mech action game with walker and hover modes, varied levels, and a
+          competitive mode that quietly points toward later tower-push genres.
+        </p>
+      </article>
+    </section>
+
+    <section class="system-panel">
+      <img class="system-logo" src="../assets/remote/images/systems/logo_ps2.png" alt="Sony PlayStation 2 logo" title="Sony PlayStation 2">
+
+      <article class="rec-entry">
+        <span class="rec-title">Katamari Damacy</span>
+        <p>
+          The original surreal ball-rolling game, built on joyful physics, odd humor, and
+          the simple pleasure of turning the world into a growing clump of stuff.
+        </p>
+      </article>
+    </section>
+
+    <section class="system-panel">
+      <img class="system-logo" src="../assets/remote/images/systems/logo_pc.png" alt="Personal computer logo" title="Personal Computer">
+
+      <article class="rec-entry">
+        <span class="rec-title">Doom</span>
+        <p>
+          Classic DOS-era sprite shooting with a fast core loop and decades of mods,
+          source ports, maps, and community experiments built on top of it.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">The Elder Scrolls III: Morrowind</span>
+        <p>
+          A strange and text-heavy open RPG with loose direction, breakable systems, and a
+          world that rewards curiosity and experimentation.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">The Elder Scrolls IV: Oblivion</span>
+        <p>
+          A messy, memorable open-world RPG full of freedom, awkward charm, and mod-friendly
+          replay value.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Half-Life</span>
+        <p>
+          A first-person shooter that keeps the player in the world while mixing combat,
+          scripted scenes, experiments, expansions, and a huge mod legacy.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Half-Life 2</span>
+        <p>
+          A cinematic sequel that pushed physics, atmosphere, setpieces, and mod support
+          into a new era while still holding together as a playable shooter.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Hypnospace Outlaw</span>
+        <p>
+          A simulated late-1990s web detective game full of weird pages, fake communities,
+          compressed music, GIF-heavy aesthetics, and surprisingly deep worldbuilding.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Mechwarrior 2</span>
+        <p>
+          Low-poly mech simulation with distinct campaigns, stark presentation, and enough
+          atmosphere to make its old technical roughness feel like part of the identity.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Minecraft</span>
+        <p>
+          A flexible block-building survival sandbox that can be relaxing, creative, or
+          heavily modded into something very different.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">The Oregon Trail</span>
+        <p>
+          A classic journey-management game about supplies, randomness, risk, and survival,
+          with many worthwhile older versions.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Portal</span>
+        <p>
+          A compact first-person puzzle game built around portals, spatial problem solving,
+          sharp pacing, and a memorable test-chamber structure.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">Portal 2</span>
+        <p>
+          A larger sequel with more story, refined puzzle tools, cooperative play, and an
+          editor for making more test chambers.
+        </p>
+      </article>
+
+      <article class="rec-entry">
+        <span class="rec-title">The Sims</span>
+        <p>
+          A long-running life simulation series about controlling virtual people, building
+          homes, making chaos, and navigating a mountain of expansions and mods.
+        </p>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Navigation</h2>
+      <p class="page-links">
+        <a href="../index.html" class="bigfont">Back to main homepage</a>
+        <a href="../index.html" class="bigfont">Back to Kitsora home</a>
+      </p>
+    </section>
+
+    <footer class="footer smallfont">
+      <p>
+        <a href="../index.html">Main Homepage</a>
+        |
+        <a href="../index.html">Kitsora Home</a>
+        |
+        <a href="../questions.html">Questions</a>
+      </p>
+      <p>P.S. website still under construction.</p>
+    </footer>
+  </main>
+
+  <script src="../js/snow.js"></script>
+</body>
+</html>
