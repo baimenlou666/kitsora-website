@@ -1,7 +1,8 @@
 Kitsora: A Digital Intelligence Framework
 Abstract
 
-<img width="850" height="440" alt="fs078" src="https://github.com/user-attachments/assets/20f4788e-688c-41e0-a2d2-f9976162ab99" />
+<img width="1800" height="1200" alt="skrobo_ref" src="https://github.com/user-attachments/assets/4a24425c-82b8-4cbf-a1ed-017022d01b2e" />
+
 
 Most AI systems today are built as tools.
 
