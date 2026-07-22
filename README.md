@@ -1,6 +1,8 @@
 Kitsora: A Digital Intelligence Framework
 Abstract
 
+<img width="850" height="440" alt="fs078" src="https://github.com/user-attachments/assets/20f4788e-688c-41e0-a2d2-f9976162ab99" />
+
 Most AI systems today are built as tools.
 
 They answer questions, complete tasks, and improve efficiency.
