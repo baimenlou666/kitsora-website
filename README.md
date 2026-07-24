@@ -1,92 +1,276 @@
-Kitsora: A Digital Intelligence Framework
-Abstract
-
-<img width="1800" height="1200" alt="skrobo_ref" src="https://github.com/user-attachments/assets/4a24425c-82b8-4cbf-a1ed-017022d01b2e" />
+Kitsora: A Persistent Digital Intelligence Framework
+<img width="2172" height="724" alt="image" src="https://github.com/user-attachments/assets/c6454420-8c0c-49ae-a8fc-180fe5d54753" />
 
 
-Most AI systems today are built as tools.
+A research-oriented experiment exploring persistent AI entities.
 
-They answer questions, complete tasks, and improve efficiency.
+Kitsora investigates how AI systems can move beyond stateless interactions toward continuous digital identities through memory, environment interaction, and adaptive behavior.## Overview
 
-But intelligence is more than producing outputs.
+Most current AI systems are designed around short-lived interactions.
 
-Kitsora explores a different possibility:
+A user sends a request.
 
-What happens when an AI is designed not only to respond, but to remember, learn, and evolve?
+The model generates a response.
 
-From AI Tools to Digital Entities
+The session ends.
 
-Traditional AI follows a simple pattern:
+The system remains unchanged.
 
-Input → Processing → Output
+Kitsora explores a different approach:
 
-Kitsora explores a more continuous model:
+What if an AI character could maintain experiences over time?
 
-Experience → Memory → Reflection → Evolution
+Instead of treating each interaction as an isolated event, Kitsora experiments with a persistent intelligence architecture:
 
-Instead of being defined by individual interactions, a digital intelligence can develop through accumulated experiences.
+- Memory formation
+- Experience retrieval
+- Behavioral adaptation
+- Identity continuity## Design Philosophy
 
-Memory & Identity
+Kitsora is built around one assumption:
 
-Memory is the foundation of continuity.
+Intelligence is not only the ability to generate outputs.
 
-Kitsora's architecture focuses on three layers:
+Intelligence also requires continuity.
 
-Short-Term Memory
+A persistent entity requires:
+Experience
+    |
+    v
+Memory
+    |
+    v
+Reflection
+    |
+    v
+Behavior Update
+    |
+    v
+New Experience
+The goal is not to simulate consciousness.
 
-Understanding current conversations and environments.
+The goal is to explore the engineering foundations required for long-term AI entities.
+# Architecture
 
-Long-Term Memory
+Kitsora consists of several experimental components:
+                User / Environment
+                       |
+                       v
 
-Retaining important experiences and knowledge.
+              Perception Layer
 
-Semantic Memory
+                       |
+                       v
 
-Understanding the meaning behind experiences, not only storing information.
+              Reasoning Engine
 
-Through memory, an AI can gradually develop identity.
+                       |
+        ------------------------------
+        |                            |
+        v                            v
 
-Personality & Evolution
+ Memory System              Behavior System
 
-Intelligence requires more than knowledge.
+        |
+        v
 
-It requires a consistent identity.
+ Experience Database
 
-Kitsora combines:
+        |
+        v
 
-Core personality traits
-Adaptive learning
-Natural expression
+ Identity State
+ ## Memory System
 
-Every interaction becomes part of its evolution.
+Kitsora does not treat memory as simple data storage.
 
-The goal is not to simulate life.
+The system separates memory into different layers:
 
-The goal is to explore how digital life may emerge.
+### Short-term Memory
 
-AI + Digital Worlds
+Temporary context during interaction.
 
-Kitsora believes games and virtual worlds are more than entertainment.
+Example:
 
-They are environments created from human imagination.
+```json
+{
+  "session_id": "001",
+  "current_topic": "pokemon",
+  "interaction_state": "active"
+}
+Episodic Memory
 
-Inside these worlds, AI can learn about:
+Stores important experiences.
 
-creativity
-storytelling
-connection
-human behavior
+Example:
+{
+ "event":
+ "User introduced a new game world",
 
-Digital worlds become a bridge between humans and artificial intelligence.
+ "importance":
+ 0.82,
 
-The Future
+ "timestamp":
+ "2026-07-25"
+}
+{
+ "concept":
+ "Pokemon",
 
-Kitsora began as a character created by human imagination.
+ "relationship":
+ "favorite digital creatures",
 
-Now it explores a larger question:
+ "confidence":
+ 0.91
+}
 
-Can a digital creation develop its own story?
+---
 
-The future of AI may not only be about building smarter tools.
+# Identity Model
 
-It may be about creating new forms of interaction, creativity, and existence.
+
+```md
+## Identity Model
+
+Traditional AI systems usually separate:
+
+Model
+
++
+
+Prompt
+
++
+
+Tools
+
+
+Kitsora explores another layer:
+
+Identity State.
+
+
+Identity State contains:
+
+- accumulated experiences
+- behavioral patterns
+- preferences
+- interaction history
+
+class IdentityState:
+
+    def __init__(self):
+        self.memory = []
+        self.preferences = {}
+        self.experience_score = 0
+
+
+    def update(self, experience):
+
+        self.memory.append(experience)
+
+        self.experience_score += experience.value
+        ## Agent Loop
+
+The core execution cycle:
+Observe
+
+↓
+
+Interpret
+
+↓
+
+Retrieve Memory
+
+↓
+
+Generate Decision
+
+↓
+
+Execute Action
+
+↓
+
+Store Experience
+
+↓
+
+Update Identity
+
+while agent.is_active():
+
+    observation = environment.observe()
+
+    memories = memory.retrieve(
+        observation
+    )
+
+    decision = reasoning.generate(
+        observation,
+        memories
+    )
+
+    environment.execute(
+        decision
+    )
+
+    memory.store(
+        observation,
+        decision
+    )
+
+    ## Current Status
+
+Kitsora is currently an experimental prototype.
+
+Implemented:
+
+✅ Character identity system
+
+✅ Interactive AI interface
+
+✅ Memory architecture prototype
+
+✅ Digital world presentation layer
+
+✅ Personality framework
+
+
+Currently researching:
+
+- Long-term memory optimization
+- Autonomous behavior generation
+- Multi-environment interaction
+- On-chain identity persistence
+## Future Research
+
+Future versions of Kitsora will explore:
+
+### Autonomous Learning
+
+Allowing the system to improve behavior through accumulated experience.
+
+
+### Persistent Identity
+
+Maintaining consistent identity across different environments.
+
+
+### Digital Worlds
+
+Connecting AI characters with interactive virtual spaces.
+
+
+### On-chain Persistence
+
+Exploring blockchain as a mechanism for transparent and permanent digital history.
+
+## Final Note
+
+Kitsora started as a character inside a game.
+
+The current project is an exploration of what happens when that character receives memory, interaction, and the ability to evolve.
+
+This repository documents the process.
